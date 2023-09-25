@@ -1,6 +1,6 @@
 :root{
     --bg: white;
-    --texColor: black;
+    --textColor: black;
     --softBg: #f0f0f0;
     --softTextColor: #626262
 }
@@ -21,10 +21,23 @@ a{
     text-decoration: none;
 }
 
+.dark{
+   --bg: #0f172a;
+   --textColor: #ddd;
+   --softBg: #1f273a;
+   --softTextColor: #A6A6A6
+}
+.light{
+   --bg: white;
+   --textColor: black;
+   --softBg: #f0f0f0;
+   --softTextColor: #626262
+}
+
 .container{
     min-height: 100vh;
     background-color: var(--bg);
-    color: var(--texColor);
+    color: var(--textColor);
 }
 
 .wrapper{
