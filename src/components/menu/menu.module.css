@@ -34,7 +34,7 @@
 .image{
     border: 1px solid lightgray;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
 }
 .textContainer{
     flex: 4;
