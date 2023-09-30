@@ -4,7 +4,7 @@ import styles from "./authLinks.module.css"
 import Link from 'next/link'
 
 const AuthLinks = () => {
-  const user=false
+  const user=true
 
   const [open,setOpen]= useState()
   return (
