@@ -47,7 +47,7 @@
 
 .textArea{
     width: 90%;
-    background-color: var(--softBg);
+    /* background-color: var(--softBg); */
     border-radius: 20px;
 }
 
