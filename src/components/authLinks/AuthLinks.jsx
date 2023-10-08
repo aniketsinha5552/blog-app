@@ -5,8 +5,6 @@ import Link from 'next/link'
 import { signOut, useSession } from 'next-auth/react'
 
 const AuthLinks = () => {
-  const user=true
-
   const {status}= useSession()
 
   const [open,setOpen]= useState()
