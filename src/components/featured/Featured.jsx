@@ -2,7 +2,20 @@ import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
 
-const Featured = () => {
+const getData = async () => {
+  const res = await fetch(`http://localhost:3000/api/posts/${"all-about-techblog"}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
+
+const Featured = async() => {
+  const data = await getData();
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
@@ -10,21 +23,14 @@ const Featured = () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image className={styles.image} src="/p1.jpeg" alt="" fill />
+          <Image className={styles.image} src={data?.img} alt="" fill />
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
-            laoreet nulla. Etiam consectetur,
+            {data?.title}
           </h1>
-          <p className={styles.postDesc}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
-            laoreet nulla. Etiam consectetur, lectus lacinia ultricies
-            dignissim, metus est interdum metus, sit amet imperdiet velit mauris
-            et lacus. Vivamus purus nibh, feugiat a hendrerit at, posuere eget
-            libero. Quisque pharetra neque sit amet est fringilla facilisis.
-            Vivamus mauris elit, facilisis id auctor quis, tincidunt non ante.
-          </p>
+          <div className={styles.postDesc}  dangerouslySetInnerHTML={{__html:data?.desc}} />
+        
           <button className={styles.button}>Read More</button>
         </div>
       </div>

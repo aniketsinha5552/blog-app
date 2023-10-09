@@ -1,29 +1,41 @@
 .container{
-
-}
-
-.editor{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .select{
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    margin-left: 50px;
+    width: max-content;
+  }
+  
+  .editor {
     display: flex;
     gap: 20px;
     height: 700px;
     position: relative;
-}
-
-.button, .addButton{
+  }
+  
+  .button,
+  .addButton {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     background-color: transparent;
     border: 1px solid var(--textColor);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
-}
-.addButton{
-    border-color: #1a8927;
-}
-.add{
+  }
+  
+  .addButton {
+    border-color: #1a8917;
+  }
+  
+  .add {
     display: flex;
     gap: 20px;
     background-color: var(--bg);
@@ -31,35 +43,33 @@
     z-index: 999;
     width: 100%;
     left: 50px;
-}
-
-.input{
+  }
+  
+  .input{
     padding: 50px;
     font-size: 64px;
     border: none;
     outline: none;
     background-color: transparent;
     color: var(--textColor);
-}
-.input::placeholder{
+  }
+  
+  .input::placeholder{
     color: #b3b3b1;
-}
-
-.textArea{
-    width: 90%;
-    /* background-color: var(--softBg); */
-    border-radius: 20px;
-}
-
-.publish{
+  }
+  
+  .textArea {
+    width: 100%;
+  }
+  
+  .publish{
     position: absolute;
-    top: 30px;
-    right: 20px;
+    top: 0px;
+    right: 0px;
     padding: 10px 20px;
     border: none;
     background-color: #1a8917;
     color: white;
     cursor: pointer;
-    border-radius: 10px ;
-    font-weight: bold;
-}
+    border-radius: 20px;
+  }
