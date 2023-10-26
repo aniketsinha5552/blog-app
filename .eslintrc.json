@@ -1,8 +1,4 @@
 
 {
-  "eslint": {
-      "ignoreDuringBuilds": true
-  },
   "extends": "next/core-web-vitals"
-/* ...Your other config rules */
 }
