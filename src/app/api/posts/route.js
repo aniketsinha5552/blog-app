@@ -17,6 +17,9 @@ export const GET = async (req) => {
       ...(cat && { catSlug: cat }),
     },
     include: { user: true },
+    orderBy: {
+      createdAt: 'desc', // Specify the ordering by createdAt in descending order
+    },
   };
 
   try {

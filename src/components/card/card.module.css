@@ -39,7 +39,7 @@
 }
 
 @media screen and (max-width:1280px){
-    .imgContainer{
+    .imageContainer{
         display: none;
     }
 }

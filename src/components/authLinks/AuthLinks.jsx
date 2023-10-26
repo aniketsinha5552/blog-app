@@ -23,8 +23,8 @@ const AuthLinks = () => {
       {open &&(
         <div className={styles.responsiveMenu}>
           <Link href="/">Homepage</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
+          {/* <Link href="/">About</Link> */}
+          <Link href="https://aniketsinha.vercel.app/">Contact</Link>
           {status=="unauthenticated" ? <Link href="/login">Login</Link>
           : <>
           <Link href="/write">Write</Link>

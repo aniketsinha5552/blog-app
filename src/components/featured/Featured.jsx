@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
-const getData = async () => {
-  const res = await fetch(`http://localhost:3000/api/posts/${"all-about-techblog"}`, {
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
     cache: "no-store",
   });
 
@@ -15,7 +16,8 @@ const getData = async () => {
 };
 
 const Featured = async() => {
-  const data = await getData();
+  const slug = "conways-way-of-life";
+  const data = await getData(slug);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
@@ -29,9 +31,12 @@ const Featured = async() => {
           <h1 className={styles.postTitle}>
             {data?.title}
           </h1>
-          <div className={styles.postDesc}  dangerouslySetInnerHTML={{__html:data?.desc}} />
+          <div className={styles.postDesc}  dangerouslySetInnerHTML={{__html:data?.desc?.substring(0,300)}} />
         
+          <Link href={`/posts/${slug}`} className={styles.link}>
           <button className={styles.button}>Read More</button>
+          </Link>
+          
         </div>
       </div>
     </div>
