@@ -24,7 +24,7 @@ const Menu = async () => {
   return (
     <div className={styles.container}>
       {/* What's Hot */}
-      <h2 className={styles.subtitle}>What&apos;s hot"</h2>
+      <h2 className={styles.subtitle}>What&apos;s hot</h2>
       <h1 className={styles.title}>Most Popular</h1>
       <div className={styles.items}>
         {posts?.map(item=>{
